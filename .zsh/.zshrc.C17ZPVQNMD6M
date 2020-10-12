@@ -1,0 +1,28 @@
+#Remove export directive and local bin directory
+eval ${/usr/libexec/path_helper | sed -e 's|; export PATH;||' -e 's|/Users/dominic/bin||g'}
+#Add Macports directories before system directories
+PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+
+export PATH
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+PATH="/Users/dominic.shelton/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/Users/dominic.shelton/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/Users/dominic.shelton/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/Users/dominic.shelton/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/Users/dominic.shelton/perl5"; export PERL_MM_OPT;
+
+alias hubr='export TOKEN="5977e189bf86e1101627edcc9cd2451b1f3423de"; export HUBR_DEFAULT_ORG="MYOB-Technology"; hubr'
+
+alias myob='myob-auth l --username dominic.shelton'
+alias myobk='myob-auth k -e europa-preprod'
+alias kube='kubectl -n eedx'
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ ! -f /Users/dominic.shelton/.nvm/versions/node/v10.15.3/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] || . /Users/dominic.shelton/.nvm/versions/node/v10.15.3/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
+
+[[ ! -f ~/.fzf.zsh ]] || source ~/.fzf.zsh

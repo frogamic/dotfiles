@@ -1,0 +1,15 @@
+[user]
+	name = Dominic Shelton
+	email = frogamic@protonmail.com
+[push]
+	default = current
+[core]
+	excludesfile = ~/.gitignore_global
+	editor = `which vim`
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[pull]
+	ff = only

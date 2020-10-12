@@ -1,0 +1,8 @@
+# Vim swapfiles
+*.swp
+
+#GNU tag files
+GPATH
+GRTAGS
+GTAGS
+
