@@ -1,0 +1,15 @@
+#! /usr/bin/env bash
+
+set -euo pipefail
+cd "$(dirname "$0")"
+
+stow -R home
+
+for hook in "$(pwd)/home/.gitrc/templates"/**/*; do
+	DESTINATION="${hook/$(pwd)\/home/$HOME}"
+	if [[ -f "${DESTINATION}" ]]; then
+		echo "WARNING: ${DESTINATION} already exists"
+	else
+		ln -s "${hook}" "${DESTINATION}"
+	fi
+done
