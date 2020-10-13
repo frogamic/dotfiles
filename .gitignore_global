@@ -1,8 +1,11 @@
-# Vim swapfiles
+# Mac files
+.DS_Store
+
+# Temporary swapfiles
+*~
 *.swp
 
 #GNU tag files
 GPATH
 GRTAGS
 GTAGS
-
