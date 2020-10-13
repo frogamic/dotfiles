@@ -77,7 +77,7 @@ fi
 alias xclip='xclip -selection c'
 hash bat && alias cat='bat'
 
-LOCAL_ZSHRC="~/zsh/.zshrc.${hostname}"
+LOCAL_ZSHRC="$HOME/.zsh/.zshrc.$(hostname)"
 [[ ! -f $LOCAL_ZSHRC ]] || source $LOCAL_ZSHRC
 
 Invoke-ScriptAnalyzer () {
