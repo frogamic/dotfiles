@@ -10,6 +10,7 @@ for hook in "$(pwd)/home/.gitrc/templates"/**/*; do
 	if [[ -f "${DESTINATION}" ]]; then
 		echo "WARNING: ${DESTINATION} already exists"
 	else
+		mkdir -p "$(dirname "${DESTINATION}")"
 		ln -s "${hook}" "${DESTINATION}"
 	fi
 done
