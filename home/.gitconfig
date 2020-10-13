@@ -1,11 +1,13 @@
+[init]
+	templatedir = ~/.gitrc/templates
 [user]
 	name = Dominic Shelton
 	email = frogamic@protonmail.com
 [push]
 	default = current
 [core]
-	excludesfile = ~/.gitignore_global
-	editor = `which vim`
+	excludesfile = ~/.gitrc/ignore
+	editor = vim
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
