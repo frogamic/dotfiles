@@ -29,6 +29,6 @@ Plug 'mxw/vim-jsx'
 Plug 'prettier/vim-prettier'
 Plug 'pprovost/vim-ps1'
 Plug 'pedrohdz/vim-yaml-folds'
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npm ci' }
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install --frozen-lockfile' }
 
 call plug#end()
