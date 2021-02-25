@@ -13,6 +13,8 @@ Plug 'fannheyward/coc-sql', { 'do': 'yarn install --frozen-lockfile && npm run p
 Plug 'josa42/coc-sh', { 'do': 'yarn install --frozen-lockfile && npm run prepare' }
 Plug 'klaaspieter/coc-sourcekit', { 'do': 'yarn install --frozen-lockfile && npm run prepare' }
 Plug 'coc-extensions/coc-powershell', { 'do': 'npm ci && npm run compile' }
+Plug 'liuchengxu/vista.vim'
+Plug 'liuchengxu/eleline.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
@@ -30,6 +32,7 @@ Plug 'mxw/vim-jsx'
 Plug 'prettier/vim-prettier'
 Plug 'pprovost/vim-ps1'
 Plug 'pedrohdz/vim-yaml-folds'
+Plug 'Konfekt/FastFold'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install --frozen-lockfile' }
 
 call plug#end()

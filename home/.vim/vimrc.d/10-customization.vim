@@ -7,7 +7,7 @@ set shiftwidth=2
 
 set spell spelllang=en_au
 
-set ruler
+set noruler
 set incsearch
 set ignorecase
 set smartcase
@@ -30,3 +30,5 @@ autocmd FileType cpp set commentstring=//\ %s
 
 set listchars=tab:▸\ ,trail:·
 set list
+set foldmethod=syntax
+set laststatus=2

@@ -4,3 +4,4 @@ nmap <C-e> :e#<CR>
 nmap <C-l> :bnext<CR>
 nmap <C-h> :bprevious<CR>
 nmap <C-n> :NERDTreeToggle<CR>
+nmap <C-c> :Vista!!<CR>
