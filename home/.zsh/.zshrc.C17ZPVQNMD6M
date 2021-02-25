@@ -1,9 +1,12 @@
 #Remove export directive and local bin directory
 eval ${/usr/libexec/path_helper | sed -e 's|; export PATH;||' -e 's|/Users/dominic/bin||g'}
-#Add Macports directories before system directories
-PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+#Add texlive and Macports directories before system directories
+export PATH="/usr/local/opt/ruby/bin:/opt/local/Library/Frameworks/Python.framework/Versions/Current/bin:/opt/local/bin:/opt/local/sbin:/usr/local/opt/ruby/bin:$PATH"
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 
-export PATH
+export MANPATH="/Users/dominic.shelton/texlive/2019/texmf-dist/doc/man:$MANPATH"
+export INFOPATH="/Users/dominic.shelton/texlive/2019/texmf-dist/doc/info:$INFOPATH"
+export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -17,12 +20,18 @@ PERL_MM_OPT="INSTALL_BASE=/Users/dominic.shelton/perl5"; export PERL_MM_OPT;
 
 alias hubr='export TOKEN="5977e189bf86e1101627edcc9cd2451b1f3423de"; export HUBR_DEFAULT_ORG="MYOB-Technology"; hubr'
 
-alias myob='myob-auth l --username dominic.shelton'
-alias myobk='myob-auth k -e europa-preprod'
-alias kube='kubectl -n eedx'
+alias myobk='myob-auth k -e europa-preprod -n gm-digital'
+alias myobkp='myob-auth k -e europa -n gm-digital'
+alias kube='kubectl -n gm-digital'
+
+USERPROMPT="\$([ ! -f ~/.aws/account_name ] && echo \"%{$fg_no_bold[green]%}\$(whoami)@%{$reset_color%}\" || echo \"%{$fg_no_bold[red]%}\$(cat ~/.aws/account_name)%{$reset_color%}@\")"
+PROMPT="$ERR_PR$USERPROMPT$HOST_PR$JOBS_PR$GIT_PR$PRIV_PR%{$reset_color%} "
+
+alias docker-use='. ~/bin/docker-use'
 
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`
 [[ ! -f /Users/dominic.shelton/.nvm/versions/node/v10.15.3/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] || . /Users/dominic.shelton/.nvm/versions/node/v10.15.3/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
 
 [[ ! -f ~/.fzf.zsh ]] || source ~/.fzf.zsh
+export HOMEBREW_NO_AUTO_UPDATE=1

@@ -74,6 +74,7 @@ else
     alias open="xdg-open"
 fi
 
+alias yolo='sudo $(fc -ln -1)'
 alias xclip='xclip -selection c'
 hash bat && alias cat='bat'
 
