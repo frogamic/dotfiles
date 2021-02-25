@@ -78,7 +78,7 @@ alias yolo='sudo $(fc -ln -1)'
 alias xclip='xclip -selection c'
 hash bat && alias cat='bat'
 
-LOCAL_ZSHRC="$HOME/.zsh/.zshrc.$(hostname)"
+LOCAL_ZSHRC="$HOME/.zsh/zshrc.$(hostname)"
 [[ ! -f $LOCAL_ZSHRC ]] || source $LOCAL_ZSHRC
 
 Invoke-ScriptAnalyzer () {
