@@ -31,4 +31,9 @@ autocmd FileType cpp set commentstring=//\ %s
 set listchars=tab:▸\ ,trail:·
 set list
 set foldmethod=syntax
+" Open all folds by default
+autocmd Syntax * normal zR
+" Don't expand comment blocks with [oO]
+autocmd FileType * setlocal formatoptions-=o
+" Display status line always
 set laststatus=2
