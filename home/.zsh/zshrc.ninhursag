@@ -1,0 +1,1 @@
+[[ "$(tty)" != '/dev/tty1' ]] || pidof sway > /dev/null || exec sway

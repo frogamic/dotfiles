@@ -79,9 +79,9 @@ alias xclip='xclip -selection c'
 hash bat && alias cat='bat'
 hash nix-shell && function ns() { nix-shell -p "$1" --run "$*"; }
 
-LOCAL_ZSHRC="$HOME/.zsh/zshrc.$(hostname)"
-[[ ! -f $LOCAL_ZSHRC ]] || source $LOCAL_ZSHRC
-
 Invoke-ScriptAnalyzer () {
     pwsh -command "\"$*\" -split \" \" | ForEach-Object {Invoke-ScriptAnalyzer -Path \$_}"
 }
+
+LOCAL_ZSHRC="$HOME/.zsh/zshrc.$(hostname)"
+[[ ! -f $LOCAL_ZSHRC ]] || source $LOCAL_ZSHRC
