@@ -1,5 +1,6 @@
 [init]
 	templatedir = ~/.gitrc/templates
+	defaultBranch = main
 [user]
 	name = Dominic Shelton
 	email = frogamic@protonmail.com
