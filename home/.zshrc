@@ -60,6 +60,8 @@ alias ll='ls -alFh'
 alias la='ls -A'
 alias l='ls -CF'
 cdl () { cd $*; ll }
+# cols - 30 allows for line number and truncation message
+alias rg='rg --max-columns-preview -M "$(expr "$(tput cols)" - 30)"'
 
 if [[ `uname -s` == "Darwin" ]]; then
     # Make Mac more Linuxy
