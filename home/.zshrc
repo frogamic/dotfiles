@@ -39,11 +39,13 @@ bindkey -v
 # End of lines configured by zsh-newuser-install
 
 #Add users's bin folder to path if it exists and is not already in path.
-if [[ -d ~/bin && ! ( $PATH =~ "$HOME/bin" || $PATH =~ "~/bin" ) ]] then
-    PATH="$HOME/bin:$PATH"
+if [[ -d "${HOME}/bin" && ! ( $PATH =~ "$HOME/bin" || $PATH =~ "~/bin" ) ]] then
+    export PATH="$HOME/bin:$PATH"
 fi
 
-export PATH
+if [[ -d "${HOME}/repos" ]] then
+    export CDPATH="${CDPATH}:${HOME}/repos"
+fi
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
