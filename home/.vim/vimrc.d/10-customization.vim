@@ -28,8 +28,7 @@ hi SpellLocal gui=undercurl
 autocmd FileType c set commentstring=//\ %s
 autocmd FileType cpp set commentstring=//\ %s
 
-set listchars=tab:▸\ ,trail:·
-set list
+set list listchars=tab:▸\ ,multispace:·\ ,trail:·
 set foldmethod=syntax
 " Open all folds by default
 autocmd BufWinEnter * silent! :%foldopen!
