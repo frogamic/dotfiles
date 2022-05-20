@@ -36,3 +36,5 @@ autocmd BufWinEnter * silent! :%foldopen!
 autocmd FileType * setlocal formatoptions-=o
 " Display status line always
 set laststatus=2
+
+set re=2
