@@ -1,0 +1,14 @@
+#Remove export directive and local bin directory
+eval ${/usr/libexec/path_helper | sed -e 's|; export PATH;||' -e 's|/Users/dominic/bin||g'}
+export PATH="/opt/homebrew/Library/Frameworks/Python.framework/Versions/Current/bin:/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+FZF_DIR="$(dirname $(readlink $(which fzf)))"
+if [[ $FZF_DIR == "/nix/store/"* ]]; then
+  source "$FZF_DIR/../share/fzf/completion.zsh"
+  source "$FZF_DIR/../share/fzf/key-bindings.zsh"
+fi
+export HOMEBREW_NO_AUTO_UPDATE=1

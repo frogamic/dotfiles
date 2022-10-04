@@ -89,5 +89,5 @@ Invoke-ScriptAnalyzer () {
     pwsh -command "\"$*\" -split \" \" | ForEach-Object {Invoke-ScriptAnalyzer -Path \$_}"
 }
 
-LOCAL_ZSHRC="$HOME/.zsh/zshrc.$(hostname)"
+LOCAL_ZSHRC="$HOME/.zsh/zshrc.$(hostname -s)"
 [[ ! -f $LOCAL_ZSHRC ]] || source $LOCAL_ZSHRC
