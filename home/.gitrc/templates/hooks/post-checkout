@@ -5,22 +5,27 @@ set -euo pipefail
 
 # If this repo's remote domain contains the string ALT_DOMAIN, set user.email
 # to ALT_EMAIL, otherwise use DEFAULT_EMAIL.
-REMOTE_MATCH='Innablr/'
-ALT_EMAIL='dominic.shelton@innablr.com.au'
+ALT_EMAILS=(\
+    ':innablr\/=dominic.shelton@innablr.com.au' \
+)
 
 # Current repo's configured email address and remotes
-EMAIL=$(git config --local user.email||echo '')
+LOCAL_EMAIL="$(git config --local user.email || echo '')"
 REMOTES="$(git remote -v)"
 
 # If this repo has a local user.email setting, do nothing. This allows for
 # manually setting user.email instead of using this script.
-if [[ -n ${EMAIL} ]]; then
+if [[ -n ${LOCAL_EMAIL} ]]; then
     exit 0
 fi
 
 shopt -s nocasematch
-if [[ "${REMOTES}" == *${REMOTE_MATCH}* ]]; then
-    echo "Setting user.email to ${ALT_EMAIL}"
-    git config --local user.email "${ALT_EMAIL}"
-    exit 0
-fi
+for config in "${ALT_EMAILS[@]}"; do
+    REMOTE_MATCH=".*${config%%=*}.*"
+    ALT_EMAIL="${config##*=}"
+    if [[ "${REMOTES}" =~ $REMOTE_MATCH ]]; then
+        echo "Setting user.email to ${ALT_EMAIL}"
+        git config --local user.email "${ALT_EMAIL}"
+        exit 0
+    fi
+done
