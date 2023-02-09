@@ -39,7 +39,8 @@ parse_git_state() {
     GIT_STATE=$GIT_STATE$GIT_PROMPT_MERGING
   fi
 
-  if [[ -n $(git ls-files --other --exclude-standard 2> /dev/null) ]]; then
+  local GIT_ROOT="$(git rev-parse --show-toplevel 2> /dev/null)"
+  if [[ -n $(git ls-files --other --exclude-standard "${GIT_ROOT}" 2> /dev/null) ]]; then
     GIT_STATE=$GIT_STATE$GIT_PROMPT_UNTRACKED
   fi
 
