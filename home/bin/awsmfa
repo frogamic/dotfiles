@@ -13,4 +13,4 @@ SESSION_CREDENTIAL="$(aws sts get-session-token --serial-number="${MFA_DEVICE}" 
 
 aws configure set aws_access_key_id "$(echo $SESSION_CREDENTIAL | jq -r .AccessKeyId)" --profile=$PROFILE
 aws configure set aws_secret_access_key "$(echo $SESSION_CREDENTIAL | jq -r .SecretAccessKey)" --profile=$PROFILE
-aws configure set aws_session_token "$(Echo $SESSION_CREDENTIAL | jq -r .SessionToken)" --profile=$PROFILE
+aws configure set aws_session_token "$(echo $SESSION_CREDENTIAL | jq -r .SessionToken)" --profile=$PROFILE
