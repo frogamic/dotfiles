@@ -2,7 +2,7 @@
 
 set -Euo pipefail
 
-PROFILE="${1:-default}"
+PROFILE="${1:-${AWS_PROFILE:-default}}"
 
 MFA_DEVICE="$(aws iam list-mfa-devices --profile="${PROFILE}-mfa" --query='MFADevices[0].SerialNumber' --output=text)"
 
