@@ -8,7 +8,7 @@ Plug 'neoclide/coc-css', { 'do': 'yarn install --frozen-lockfile && npm run prep
 Plug 'neoclide/coc-eslint', { 'do': 'yarn install --frozen-lockfile && npm run prepare' }
 Plug 'neoclide/coc-yank', { 'do': 'yarn install --frozen-lockfile && npm run prepare' }
 Plug 'neoclide/coc-git', { 'do': 'yarn install --frozen-lockfile && npm run prepare' }
-Plug 'joenye/coc-cfn-lint', { 'do': 'yarn install --frozen-lockfile && npm run prepare' }
+Plug 'joenye/coc-cfn-lint', { 'do': 'npm ci && npm run prepare' }
 Plug 'fannheyward/coc-sql', { 'do': 'yarn install --frozen-lockfile && npm run prepare' }
 Plug 'josa42/coc-sh', { 'do': 'yarn install --frozen-lockfile && npm run prepare' }
 Plug 'klaaspieter/coc-sourcekit', { 'do': 'yarn install --frozen-lockfile && npm run prepare' }
