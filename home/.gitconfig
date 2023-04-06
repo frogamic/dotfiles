@@ -16,3 +16,10 @@
 	required = true
 [pull]
 	ff = only
+[alias]
+	amend = commit --amend
+	amendn = commit --amend --no-edit
+	pfl = push --force-with-lease
+	pu = push -u
+	pr = pull --rebase
+	unstage = reset HEAD --
