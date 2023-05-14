@@ -23,3 +23,7 @@
 	pu = push -u
 	pr = pull --rebase
 	unstage = reset HEAD --
+[url "github:"]
+	insteadOf = https://github.com/
+[url "gitlab:"]
+	insteadOf = https://gitlab.com/
