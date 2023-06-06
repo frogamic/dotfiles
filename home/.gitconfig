@@ -4,6 +4,7 @@
 [user]
 	name = Dominic Shelton
 	email = frogamic@protonmail.com
+	signingkey = AAE070F067EC00A5
 [push]
 	default = current
 [core]
@@ -27,3 +28,5 @@
 	insteadOf = https://github.com/
 [url "gitlab:"]
 	insteadOf = https://gitlab.com/
+[commit]
+	gpgsign = true
