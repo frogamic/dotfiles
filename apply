@@ -2,5 +2,4 @@
 
 set -euo pipefail
 cd "$(dirname "$0")"
-
-stow -R home
+nix run --no-write-lock-file
