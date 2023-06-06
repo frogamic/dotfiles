@@ -30,3 +30,5 @@
 	insteadOf = https://gitlab.com/
 [commit]
 	gpgsign = true
+[includeIf "gitdir:/Users"]
+	path = ~/.gitrc/.gitconfig-macos
