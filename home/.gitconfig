@@ -1,5 +1,4 @@
 [init]
-	templatedir = ~/.gitrc/templates
 	defaultBranch = main
 [user]
 	name = Dominic Shelton
@@ -30,5 +29,18 @@
 	insteadOf = https://gitlab.com/
 [commit]
 	gpgsign = true
+
 [includeIf "gitdir:/Users"]
-	path = ~/.gitrc/.gitconfig-macos
+	path = ~/.gitrc/config-macos
+
+[includeIf "hasconfig:remote.*.url:git@stash.seqta.com.au:**"]
+	path = ~/.gitrc/config-educationhorizons
+[includeIf "hasconfig:remote.*.url:github:EducationHorizons/**"]
+	path = ~/.gitrc/config-educationhorizons
+[includeIf "hasconfig:remote.*.url:https://github.com/EducationHorizons/**"]
+	path = ~/.gitrc/config-educationhorizons
+
+[includeIf "hasconfig:remote.*.url:github:innablr/**"]
+	path = ~/.gitrc/config-innablr
+[includeIf "hasconfig:remote.*.url:https://github.com/innablr/**"]
+	path = ~/.gitrc/config-innablr
