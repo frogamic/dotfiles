@@ -1,21 +1,29 @@
-[init]
-	defaultBranch = main
 [user]
 	name = Dominic Shelton
 	email = frogamic@protonmail.com
 	signingkey = AAE070F067EC00A5
-[push]
-	default = current
 [core]
 	excludesfile = ~/.gitrc/ignore
 	editor = vim
+[init]
+	defaultBranch = main
+
+[pull]
+	ff = only
+[push]
+	default = upstream
+	autoSetupRemote = true
+[checkout]
+	defaultRemote = origin
+[commit]
+	gpgsign = true
+
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-[pull]
-	ff = only
+
 [alias]
 	amend = commit --amend
 	amendn = commit --amend --no-edit
@@ -23,12 +31,11 @@
 	pu = push -u
 	pr = pull --rebase
 	unstage = reset HEAD --
+
 [url "github:"]
 	insteadOf = https://github.com/
 [url "gitlab:"]
 	insteadOf = https://gitlab.com/
-[commit]
-	gpgsign = true
 
 [includeIf "gitdir:/Users"]
 	path = ~/.gitrc/config-macos
