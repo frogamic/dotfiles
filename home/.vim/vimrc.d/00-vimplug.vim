@@ -37,5 +37,6 @@ Plug 'Konfekt/FastFold'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install --frozen-lockfile' }
 Plug 'LnL7/vim-nix'
 Plug 'yasuhiroki/github-actions-yaml.vim'
+Plug 'github/copilot.vim'
 
 call plug#end()
