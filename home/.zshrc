@@ -82,8 +82,17 @@ alias kube='kubectl'
 
 alias yolo='sudo $(fc -ln -1)'
 alias xclip='xclip -selection c'
-hash bat && alias cat='bat'
 hash nix-shell && function ns() { nix-shell -p "$1" --run "$*"; }
+
+hash bat && alias cat='bat'
+_cat () {
+    if [[ -d $1 ]]; then
+        ll "$@"
+    else
+        cat "$@"
+    fi
+}
+alias cat=_cat
 
 Invoke-ScriptAnalyzer () {
     pwsh -command "\"$*\" -split \" \" | ForEach-Object {Invoke-ScriptAnalyzer -Path \$_}"
