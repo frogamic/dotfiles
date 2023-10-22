@@ -82,7 +82,7 @@ alias kube='kubectl'
 
 alias yolo='sudo $(fc -ln -1)'
 alias xclip='xclip -selection c'
-hash nix-shell && function ns() { nix-shell -p "$1" --run "$*"; }
+hash nix && function nr() { nix run nixpkgs#"$1" -- "${@:2}"; }
 
 hash bat && alias cat='bat'
 _cat () {
