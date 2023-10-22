@@ -85,14 +85,14 @@ alias xclip='xclip -selection c'
 hash nix && function nr() { nix run nixpkgs#"$1" -- "${@:2}"; }
 
 hash bat && alias cat='bat'
-_cat () {
+my_cat () {
     if [[ -d $1 ]]; then
         ll "$@"
     else
         cat "$@"
     fi
 }
-alias cat=_cat
+alias cat=my_cat
 
 Invoke-ScriptAnalyzer () {
     pwsh -command "\"$*\" -split \" \" | ForEach-Object {Invoke-ScriptAnalyzer -Path \$_}"
