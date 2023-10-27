@@ -40,7 +40,11 @@
 [includeIf "gitdir:/Users"]
 	path = ~/.gitrc/config-macos
 
+[includeIf "hasconfig:remote.*.url:github:Innablr/**"]
+	path = ~/.gitrc/config-innablr
 [includeIf "hasconfig:remote.*.url:github:innablr/**"]
+	path = ~/.gitrc/config-innablr
+[includeIf "hasconfig:remote.*.url:https://github.com/Innablr/**"]
 	path = ~/.gitrc/config-innablr
 [includeIf "hasconfig:remote.*.url:https://github.com/innablr/**"]
 	path = ~/.gitrc/config-innablr
