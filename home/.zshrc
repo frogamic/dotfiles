@@ -16,6 +16,7 @@ compinit
 # Lines configured by zsh-newuser-install
 autoload -U colors && colors
 setopt prompt_subst
+setopt HIST_IGNORE_SPACE
 
 # Load the cool git prompt thing from https://gist.github.com/joshdick/4415470
 . ~/.zsh/git_prompt.zsh
