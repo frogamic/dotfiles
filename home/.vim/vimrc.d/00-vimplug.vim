@@ -23,7 +23,7 @@ Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'Xuyuanp/nerdtree-git-plugin', {'on': 'NERDTreeToggle'}
 Plug 'luochen1990/rainbow'
 Plug 'vim-syntastic/syntastic'
-Plug 'altercation/vim-colors-solarized'
+" Plug 'altercation/vim-colors-solarized'
 Plug 'romainl/vim-cool'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'

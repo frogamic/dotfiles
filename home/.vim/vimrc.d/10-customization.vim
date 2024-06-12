@@ -15,8 +15,6 @@ set hlsearch
 set number
 
 syntax enable
-" set background=dark
-colorscheme default-light
 hi clear SpellBad
 hi clear SpellLocal
 hi SpellBad cterm=underline
