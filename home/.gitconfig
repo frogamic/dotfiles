@@ -10,6 +10,7 @@
 
 [pull]
 	ff = only
+	rebase = true
 [push]
 	default = upstream
 	autoSetupRemote = true
@@ -17,6 +18,10 @@
 	defaultRemote = origin
 [commit]
 	gpgsign = true
+[rebase]
+	autoStash = true
+[merge]
+	autoStash = true
 
 [filter "lfs"]
 	clean = git-lfs clean -- %f
