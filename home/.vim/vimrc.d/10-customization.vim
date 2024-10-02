@@ -6,6 +6,7 @@ set tabstop=2
 set shiftwidth=2
 
 set spell spelllang=en_au
+set spelloptions=camel
 
 set noruler
 set incsearch
